@@ -1,13 +1,6 @@
 const videoElement1 = document.getElementById('vid1');
 const videoElement2 = document.getElementById('vid2');
 
-window.addEventListener('scroll', (event) => {
-    if(window.scrollY >= videoElement1.scrollHeight){
-        console.log(videoElement1.scrollHeight)
-
-        console.log(event)
-    }
-});
 
 document.getElementById('startBtn').addEventListener('click', (event) => {
     document.getElementById('vidsCont').style.display = 'block';
@@ -17,7 +10,7 @@ document.getElementById('startBtn').addEventListener('click', (event) => {
     setTimeout(() => {
         goToScroll(videoElement2.id)
         videoElement2.play();
-    },7000)
+    },6500)
 })
 
 
