@@ -1,16 +1,26 @@
 const videoElement1 = document.getElementById('vid1');
 const videoElement2 = document.getElementById('vid2');
+const videoElement1Con = document.getElementById('vid1Con');
+const videoElement2Con = document.getElementById('vid2Con');
 
 
 document.getElementById('startBtn').addEventListener('click', (event) => {
     document.getElementById('vidsCont').style.display = 'block';
+    document.getElementById('texts').style.display = 'none';
+
     disableScroll();
-    goToScroll(videoElement1.id);
+    goToScroll(videoElement1Con.id);
     videoElement1.play();
+    videoElement2Con.style.display = "none"
+
     setTimeout(() => {
-        goToScroll(videoElement2.id)
+      videoElement1.pause();
+    videoElement2Con.style.display = "flex"
+
+        goToScroll(videoElement2Con.id)
         videoElement2.play();
-    },6500)
+        videoElement1Con.style.display = "none"
+    },6000)
 })
 
 
