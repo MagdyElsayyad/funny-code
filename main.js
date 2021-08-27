@@ -13,14 +13,17 @@ document.getElementById('startBtn').addEventListener('click', (event) => {
     videoElement1.play();
     videoElement2Con.style.display = "none"
 
-    setTimeout(() => {
-      videoElement1.pause();
-    videoElement2Con.style.display = "flex"
+    setInterval(() => {
+      if(videoElement1.currentTime > 6){
+        videoElement1.pause();
+      videoElement2Con.style.display = "flex"
+  console.log(videoElement1.currentTime)
+          goToScroll(videoElement2Con.id)
+          videoElement2.play();
+          videoElement1Con.style.display = "none"
 
-        goToScroll(videoElement2Con.id)
-        videoElement2.play();
-        videoElement1Con.style.display = "none"
-    },6000)
+      }
+    },500)
 })
 
 
